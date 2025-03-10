@@ -21,7 +21,7 @@ const SectionOne = () => {
   }, []);
 
   useEffect(() => {
-    const greetingH3 = document.querySelector(".greeting-h3");
+    const greetingH3: null | HTMLHeadingElement = document.querySelector(".greeting-h3");
     // const text = greetingH3?.textContent;
     const text = "Hi, my name is";
     const splittedText = text?.split("");
@@ -37,8 +37,8 @@ const SectionOne = () => {
     gsap.from(".greeting-h3 span", {
       y: 70,
       opacity: 0,
-      duration: 0.3,
-      delay: 0.2,
+      duration: 0.4,
+    //   delay: 0.2,
       stagger: 0.3,
     });
   }, []);
