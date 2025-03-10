@@ -8,9 +8,11 @@ const SectionOne = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["I am a MERN stack developer."],
+      strings: ["Iam","I am a MERN stack developer."],
       typeSpeed: 40,
-    });
+      loop: true,
+      fadeOut: true,
+        });
 
     return () => {
       typed.destroy();
@@ -20,7 +22,7 @@ const SectionOne = () => {
   return (
     <div>
       <div>
-        <h1 className="text-xl m-5 absolute right-4">Resume</h1>
+        <h1 className="resume-h1 text-xl m-5 absolute right-4">Resume</h1>
       </div>
       <div className="w-screen h-screen ml-[8rem] mr-[2rem] flex items-center">
         <div className="min-w-[45rem] flex items-center gap-5 -translate-y-6 break-words">
@@ -36,11 +38,11 @@ const SectionOne = () => {
           </div>
           {/* Name */}
           <div className="w-auto text-[27px]">
-            <h3>Hi, my name is</h3>
+            <h3 className="greeting-h3">Hi, my name is</h3>
             <h1 className="text-5xl font-semibold">Noel Sebu</h1>
-            <span ref={el} className="py-4 h-6">
-              I
-            </span>
+            <div ref={el} className="h-5 min-w-2 inline-block">
+              
+            </div>
           </div>
         </div>
       </div>
