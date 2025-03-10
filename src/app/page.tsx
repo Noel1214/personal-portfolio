@@ -4,7 +4,9 @@ import SectionOne from "@/components/SectionOne";
 const page = () => {
 
   return (
-    <div className="overflow-x-hidden"></div>
+    <div className="overflow-x-hidden">
+      <SectionOne />
+    </div>
   );
 };
 
