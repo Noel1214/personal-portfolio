@@ -4,13 +4,18 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background: linear-gradient(to bottom right, #000000, #12110d);
   color: white;
 }
 
 /* .greeting-h3 span {
   display: inline-block;
 } */
+
+.thrive-text {
+  transform: translateX(-100%);
+}
