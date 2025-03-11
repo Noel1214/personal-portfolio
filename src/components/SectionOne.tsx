@@ -12,43 +12,62 @@ const SectionOne = () => {
       strings: ["Iam", "I am a MERN stack developer."],
       typeSpeed: 40,
       loop: true,
+      backDelay: 1700,
       fadeOut: true,
+      startDelay: 2600,
     });
-
     return () => {
       typed.destroy();
     };
   }, []);
 
   useEffect(() => {
-    const greetingH3: null | HTMLHeadingElement = document.querySelector(".greeting-h3");
-    // const text = greetingH3?.textContent;
-    const text = "Hi, my name is";
-    const splittedText = text?.split("");
-
-    let clutter = "";
-
-    splittedText?.forEach((element, index) => {
-      clutter += `<span>${element}</span>`;
-      console.log(element, index);
-    });
-    greetingH3.innerHTML = clutter;
-
-    gsap.from(".greeting-h3 span", {
-      y: 70,
+    gsap.fromTo(
+      ".greetings span",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.4,
+        delay: 0.7,
+        stagger: 0.2,
+        ease: "none",
+      }
+    );
+    gsap.fromTo(
+      ".noel-name span",
+      {
+        rotateY: 100,
+        opacity: 0,
+      },
+      {
+        rotateY: 0,
+        opacity: 1,
+        delay: 1.7,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "bounce.out",
+      }
+    );
+    gsap.from(".type-write-effect", {
       opacity: 0,
+      delay: 2.5,
       duration: 0.4,
-    //   delay: 0.2,
-      stagger: 0.3,
+    });
+    gsap.from(".resume-h1", {
+      y: 100,
+      duration: 1,
+      delay: 2.5,
+      ease: "back.out(2)",
     });
   }, []);
 
   return (
-    <div className="">
-      <div>
-        <h1 className="resume-h1 text-xl m-5 absolute right-4">Resume</h1>
+    <div className="relative">
+      <div className="absolute h-10 py-2 top-5 right-5 overflow-hidden">
+        <h1 className="resume-h1  text-xl">Resume</h1>
       </div>
-      <div className="w-screen h-screen ml-[8rem] mr-[2rem] flex items-center">
+      <div className="w-screen h-[86vh] ml-[8rem] mr-[2rem] flex items-center">
         <div className="min-w-[45rem] flex items-center gap-5 -translate-y-6 break-words">
           {/* Profile image  */}
           <div className="w-[20rem]">
@@ -62,9 +81,19 @@ const SectionOne = () => {
           </div>
           {/* Name */}
           <div className="w-auto text-[27px] flex flex-col gap-2">
-            <h3 className="greeting-h3 h-10 w-[13.7rem] px-2 flex gap-1 -translate-x-2 overflow-hidden"></h3>
-            <h1 className="text-5xl font-semibold">Noel Sebu</h1>
-            <div>
+            <div className="h-10 w-[13.7rem] px-2 flex gap-1 -translate-x-2 overflow-hidden">
+              <div className="greetings flex gap-2">
+                <span>Hi,</span>
+                <span>my</span>
+                <span>name</span>
+                <span>is</span>
+              </div>
+            </div>
+            <div className="noel-name text-5xl flex gap-2 font-semibold">
+              <span className="">Noel</span>
+              <span className="">Sebu</span>
+            </div>
+            <div className="type-write-effect">
               <span ref={el} className="h-5 min-w-2 inline-block"></span>
             </div>
           </div>
