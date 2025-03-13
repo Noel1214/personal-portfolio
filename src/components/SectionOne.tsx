@@ -64,7 +64,7 @@ const SectionOne = () => {
 
   return (
     <div className="relative">
-      <div className="absolute h-10 py-2 top-5 right-5 overflow-hidden">
+      <div className="absolute h-10 py-2 top-5 right-10 overflow-hidden">
         <h1 className="resume-h1  text-xl">Resume</h1>
       </div>
       <div className="w-screen h-[86vh] ml-[8rem] mr-[2rem] flex items-center">
