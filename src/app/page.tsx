@@ -1,13 +1,13 @@
 import React from "react";
 import SectionOne from "@/components/SectionOne";
-import BannerAcross from "@/components/BannerAcross";
+import MarqueeBanner from "@/components/MarqueeBanner";
 
 const page = () => {
 
   return (
     <div className="overflow-x-hidden">
       <SectionOne />
-      <BannerAcross />
+      <MarqueeBanner />
     </div>
   );
 };
