@@ -6,6 +6,7 @@ import gsap from "gsap";
 
 const SectionOne = () => {
   const el = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -22,6 +23,17 @@ const SectionOne = () => {
   }, []);
 
   useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0, scale: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        scale: 0.8,
+        ease: "power2.out",
+      }
+    );
+
     gsap.fromTo(
       ".greetings span",
       { y: 100, opacity: 0 },
@@ -72,7 +84,8 @@ const SectionOne = () => {
           {/* Profile image  */}
           <div className="w-[20rem]">
             <Image
-              className="w-[20rem] h-[20rem] scale-90 object-cover rounded-full overflow-hidden"
+              ref={imageRef}
+              className="profile-image scale-0 w-[20rem] h-[20rem] object-cover rounded-full overflow-hidden"
               src="/Noel.jpg"
               width={900}
               height={900}
